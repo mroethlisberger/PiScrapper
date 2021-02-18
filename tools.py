@@ -95,8 +95,9 @@ def csv_writer(obj, vendor):
                 writer.writerow([today, current_time, price])
                 f.close()
                 
-    except:
-            print("whoops")
+    except Exception as e:
+            print("whoops, something went wrong!")
+            print(e)
 
 def getVendor(url_string):
     first = url_string.find(".")

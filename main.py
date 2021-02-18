@@ -8,6 +8,9 @@ Created on Sun Jan 24 15:06:07 2021
 """
 ToDo:
     swichcase for vendor / scrapper
+    change wishlist to a df
+        add product category
+
 """
 
 from datetime import datetime, date
@@ -31,15 +34,15 @@ def workWishlist(csv):
         
         # choose the scrapper according to the vendor
         if vendor == "digitec":    
-            data = scrapper_digitec.scrapper(url_string)
+            priceForProduct = scrapper_digitec.scrapper(url_string)
         
             # write to csv
-            tools.csv_writer(data, vendor)
+            tools.csv_writer(priceForProduct, vendor)
             
         elif vendor == "microspot":
             pass
         
-        print("Passed run for objekt Nr. " + str(count) + ": " + data["Product"])
+        print("Passed run for objekt Nr. " + str(count) + ": " + priceForProduct["Product"])
 
 # Main function / lööp
 while True:
